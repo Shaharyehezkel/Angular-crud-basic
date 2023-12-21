@@ -1,0 +1,14 @@
+<p>shop works!</p>
+<a href="shop/dairy">dairy</a>&nbsp;
+<a href="shop/toys">toys</a>&nbsp;
+<router-outlet></router-outlet>
+<!-- {{myProds|json}} -->
+<div *ngFor="let item of myProds;">
+    <h2>Description:{{item.desc}},Price:{{item.price }}</h2>
+    <button (click)="deleteitem(item)">Delete</button>
+    <button (click)="updProd(item.id,desc.value,+price.value)">Update</button>
+</div>
+
+Description:<input #desc>
+Price:<input #price>
+<button (click)="addProd(desc.value,+price.value)">Add</button>
